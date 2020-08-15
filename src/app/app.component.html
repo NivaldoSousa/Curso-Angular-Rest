@@ -1,19 +1,2 @@
-<form>
+<router-outlet></router-outlet>
 
-  <div class="form-group">
-    <h3>Login do Sistema</h3>
-  </div>
-
-  <div class="form-group">
-    <label>E-mail:</label>
-    <input type="email" class="form-control" [(ngModel)] = "usuario.login" id="login" name="login" placeholder="Informe o UserName" required>
-  </div>
-
-  <div class="form-group">
-    <label>Senha:</label>
-    <input type="password" class="form-control" [(ngModel)] = "usuario.senha" id="senha" name="senha" placeholder="Informe a Senha" required>
-  </div>
-
-  <button type="button" class="btn btn-primary" (click) ="login()" >Acessar</button>
-
-</form>
