@@ -7,12 +7,15 @@ import { HomeComponent } from './home/home.component'; /*Requisições Ajax*/
 import { RouterModule, Routes } from '@angular/router';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
 import { LoginComponent } from './login/login.component';
-import {HttpInterceptorModule} from './service/header-interceptor.service';
+import { HttpInterceptorModule } from './service/header-interceptor.service';
+import { UsuarioComponent } from './componente/usuario/usuario/usuario.component';
+import {UsuarioService} from './service/usuario.service';
 
 export const appRouters: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: '', component: LoginComponent }
+  { path: '', component: LoginComponent },
+  { path: 'usuarioList', component: UsuarioComponent }
 ];
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(appRouters);
@@ -21,8 +24,9 @@ export const routes: ModuleWithProviders = RouterModule.forRoot(appRouters);
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
-  ],
+    LoginComponent,
+    UsuarioService,
+    UsuarioComponent],
 
   imports: [
     BrowserModule, FormsModule, HttpClientModule, routes, HttpInterceptorModule
