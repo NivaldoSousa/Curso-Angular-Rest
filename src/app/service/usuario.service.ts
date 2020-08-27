@@ -28,4 +28,13 @@ export class UsuarioService {
     return this.http.get(AppConstants.baseUrl + "usuarioPorNome/" + nome);
   }
 
+  salvarUsuario(user): Observable<any> {
+    return this.http.post<any>(AppConstants.baseUrl, user);
+  }
+
+  updateUsuario(user): Observable<any> {
+    return this.http.put<any>(AppConstants.baseUrl, user);
+  }
+
+
 }
