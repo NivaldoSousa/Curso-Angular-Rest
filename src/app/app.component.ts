@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
 
-  title = 'Curso-Angular';
+title = 'Curso-Angular';
 
   constructor(private router: Router) {
 
@@ -33,4 +33,6 @@ export class AppComponent implements OnInit {
       return true;
     }
   }
+
+
 }

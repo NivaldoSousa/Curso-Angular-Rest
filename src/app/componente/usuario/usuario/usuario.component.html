@@ -23,13 +23,17 @@
     </thead>
 
     <tbody>
-        <tr *ngFor="let student of students">
+        <tr *ngFor="let student of students | paginate: { itemsPerPage: 5, currentPage: p, totalItems: total }">
             <td>{{student.id}}</td>
             <td>{{student.nome}}</td>
-            <td>{{student.cpf}}</td>
+            <td>{{student.cpf | mask:'000.000.000-00'}}</td>
             <td><button (click)="deleteUsuario(student.id)" class="btn btn-danger">Delete</button></td>
             <td><button [routerLink]="['/usuarioAdd', student.id]" routerLinkActive="router-link-active"
                     class="btn btn-info">Editar</button></td>
         </tr>
     </tbody>
 </table>
+<div class="text-center">
+    <pagination-controls (pageChange)="carregarPagina(p = $event);" previousLabel="Voltar" nextLabel="Avançar" responsive="true">
+    </pagination-controls>
+</div>
