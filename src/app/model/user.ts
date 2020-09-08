@@ -1,4 +1,4 @@
-import {Telefone} from './telefone';
+import { Telefone } from './telefone';
 
 export class User {
 
@@ -6,7 +6,8 @@ export class User {
     login: String;
     nome: String;
     cpf: String;
-    senha: String
+    senha: String;
+    dataNascimento: String;
 
     telefones: Array<Telefone>;
 

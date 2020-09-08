@@ -38,8 +38,21 @@
         <div class="form-group col-md-3">
             <label for="cpf">CPF</label>
             <span style="color: red; font-size: 23px;" *ngIf="cpfValidate.invalid"> *</span>
-            <input type="text" mask="000.000.000-00" [(ngModel)]="usuario.cpf" #cpfValidate="ngModel" class="form-control" id="cpf" name="cpf"
-                required="true" autocomplete="false">
+            <input type="text" mask="000.000.000-00" [(ngModel)]="usuario.cpf" #cpfValidate="ngModel"
+                class="form-control" id="cpf" name="cpf" required="true" autocomplete="false">
+        </div>
+
+        <div class="form-group col-md-3">
+            <label for="dataNascimento">Data Nasc.</label>
+            <span style="color: red; font-size:23px;">*</span>
+            <div class="input-group">
+                <input name="dataNascimento" type="text" class="form-control" placeholder="dd/mm/yyyy" ngbDatepicker
+                    #dataNascimento="ngbDatepicker" [(ngModel)]="usuario.dataNascimento" id="dataNascimento"
+                    required="true">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" (click)="dataNascimento.toggle()" type="button"></button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -50,7 +63,8 @@
         <div class="card-body" style="padding-left: 1px;">
             <div class="form-row">
                 <div class="form-group col-md-3">
-                    <input type="text" mask="(00) 0 0000-0000" class="form-control" [(ngModel)]="telefone.numero" id="numero" name="numero">
+                    <input type="text" mask="(00) 0 0000-0000" class="form-control" [(ngModel)]="telefone.numero"
+                        id="numero" name="numero">
                 </div>
 
                 <div class="form-group col-md-2">
